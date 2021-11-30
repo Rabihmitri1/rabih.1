@@ -10,14 +10,12 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ImageListComponent
+    ImageListComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    
-    
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]
