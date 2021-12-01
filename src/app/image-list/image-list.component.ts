@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../shared/image.service';
 
-
 @Component({
   selector: 'app-image-list',
   templateUrl: './image-list.component.html',
@@ -12,7 +11,6 @@ export class ImageListComponent implements OnInit {
   searchQuery:string='';
   imagesFound: boolean = false;
   searching: boolean = false;
-  
 
   handleSuccess(data: any){
     this.images=[]
@@ -27,12 +25,14 @@ export class ImageListComponent implements OnInit {
     console.log(error);
   }
 
-  constructor(private _imageService : ImageService) { }
+  constructor(private _imageService : ImageService) { 
+    
+  }
 
   SearchImages(query: string){
     this.searching = true;
     return this._imageService.getImage(this.searchQuery).subscribe({
-      next:data=> this.handleSuccess(data),
+      next:(data: any)=> this.handleSuccess(data.hits),
       error: this.handleError.bind(this)
    });
     
