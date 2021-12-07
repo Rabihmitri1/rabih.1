@@ -12,10 +12,11 @@ import { ImageService } from './shared/image.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    ImageListComponent
+    ImageListComponent,
   ],
   imports: [
     BrowserModule,
